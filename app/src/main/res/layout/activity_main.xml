@@ -27,6 +27,18 @@
         android:id="@+id/etLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:text="Login In" />
+
+    <TextView
+        android:id="@+id/etAccount"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:text="Not Having Account?!" />
+
+    <Button
+        android:id="@+id/etSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up" />
 
 </LinearLayout>
