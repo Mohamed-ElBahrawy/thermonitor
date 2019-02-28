@@ -1,6 +1,7 @@
-package com.example.thermonitor;
+/*package com.example.thermonitor;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,13 +12,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.jar.Attributes;
+
 public class CustomListView extends ArrayAdapter<String> {
-    private String[]Names;
-    private int[]Images;
-    private Activity context;
+    private ArrayList<String>Names;
+    private ArrayList<Integer>Images;
+    private BroadcastReceiver context;
 
 
-    public CustomListView(Activity context, String[]Names,int[]Images) {
+    public CustomListView(BroadcastReceiver context, ArrayList<String>Names, ArrayList<Integer>Images) {
         super(context, R.layout.activity_second,Names);
         this.context=context;
         this.Images=Images;
@@ -40,9 +44,10 @@ public class CustomListView extends ArrayAdapter<String> {
         }else{
             viewHolder=(ViewHolder) r.getTag();
 
+
         }
-        viewHolder.imageView1.setImageResource(Images[position]);
-        viewHolder.textView1.setText(Names[position]);
+        viewHolder.imageView1.setImageResource(Images.get(position));
+        viewHolder.textView1.setText(Names.get(position));
 
         return r;
     }
@@ -56,3 +61,4 @@ public class CustomListView extends ArrayAdapter<String> {
         }
     }
 }
+*/
