@@ -39,6 +39,7 @@ public class SecondActivity extends AppCompatActivity {
     private List<ScanResult> results;
     private ArrayList<String> arrayList = new ArrayList<>();
     private ArrayAdapter adapter;
+    public static String Esp;
 
     ArrayList<Integer> Images = new ArrayList<>();
     ArrayList<String> Names = new ArrayList<>();
@@ -70,6 +71,7 @@ public class SecondActivity extends AppCompatActivity {
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Esp=arrayList.get(position);
                     Intent intent3 = new Intent(SecondActivity.this, ThirdActivity.class);
                     startActivity(intent3);
                 }
@@ -93,12 +95,12 @@ public class SecondActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             results = wifiManager.getScanResults();
             unregisterReceiver(this);
-            int j=1;
+            int j=2;
 
             for (ScanResult scanResult : results) {
                 if (scanResult.SSID.equals("ESP"+j)) {
                     arrayList.add(scanResult.SSID);
-                    j++;
+                    j--;
 
                     //adapter.notifyDataSetChanged();
 
